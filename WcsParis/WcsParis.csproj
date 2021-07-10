@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECD9D3DD-813B-47E8-BE2D-36C483EAFC97}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WcsParis</RootNamespace>
+    <AssemblyName>WcsParis</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WcsParis.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="S7.Net, Version=0.3.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\packages\S7netplus.0.3.0\lib\net452\S7.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cDatos\ACD_ListadoSensores.cs" />
+    <Compile Include="cDatos\ACD_ReportScanner.cs" />
+    <Compile Include="cDatos\ACD_Tb_Dtd.cs" />
+    <Compile Include="cDatos\ACD_Tb_Lectura_Sorter.cs" />
+    <Compile Include="cDatos\ACD_Tb_Lineas.cs" />
+    <Compile Include="cDatos\ACD_Tb_Nivel.cs" />
+    <Compile Include="cDatos\ACD_Tb_Tiendas.cs" />
+    <Compile Include="cDatos\ACD_Tb_Usuarios.cs" />
+    <Compile Include="cDatos\Datos_Server.cs" />
+    <Compile Include="cEntidades\cConversion.cs" />
+    <Compile Include="cEntidades\cDispositivos.cs" />
+    <Compile Include="cEntidades\cENT_Dtd.cs" />
+    <Compile Include="cEntidades\cENT_Lista.cs" />
+    <Compile Include="cEntidades\cEnt_Server.cs" />
+    <Compile Include="cEntidades\cENT_Usuarios.cs" />
+    <Compile Include="cEntidades\cEnums.cs" />
+    <Compile Include="cEntidades\cFullLine.cs" />
+    <Compile Include="cEntidades\cPLC.cs" />
+    <Compile Include="cEntidades\cProfinet.cs" />
+    <Compile Include="cEntidades\cRecirculado.cs" />
+    <Compile Include="cEntidades\cSalidasTroll.cs" />
+    <Compile Include="cEntidades\cTagPlc.cs" />
+    <Compile Include="cEntidades\cTb_Lectura_Cartones.cs" />
+    <Compile Include="cEntidades\cTb_Lineas.cs" />
+    <Compile Include="cEntidades\cTb_Nivel.cs" />
+    <Compile Include="cEntidades\cTb_Usuarios.cs" />
+    <Compile Include="cEntidades\ENT_Tb_Tiendas.cs" />
+    <Compile Include="cLogica\LGN_ReportScanner.cs" />
+    <Compile Include="cLogica\LGN_Tb_DTD.cs" />
+    <Compile Include="cVistas\cFunciones\CLS_Utilidades.cs" />
+    <Compile Include="cVistas\cFunciones\cMD5.cs" />
+    <Compile Include="cVistas\cFunciones\cPing.cs" />
+    <Compile Include="cVistas\cFunciones\cRegistroErr.cs" />
+    <Compile Include="cLogica\cServer.cs" />
+    <Compile Include="cLogica\LGN_Insertar_Lecturas.cs" />
+    <Compile Include="cLogica\LGN_ListadoSensores.cs" />
+    <Compile Include="cLogica\LGN_Tb_Lineas.cs" />
+    <Compile Include="cLogica\LGN_Tb_Nivel.cs" />
+    <Compile Include="cLogica\LGN_Tb_Tiendas.cs" />
+    <Compile Include="cLogica\LGN_Tb_Usuarios.cs" />
+    <Compile Include="cVistas\FrmConfOlasTiendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmConfOlasTiendas.Designer.cs">
+      <DependentUpon>FrmConfOlasTiendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmConfSalTiendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmConfSalTiendas.Designer.cs">
+      <DependentUpon>FrmConfSalTiendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmControlUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmControlUsuarios.Designer.cs">
+      <DependentUpon>FrmControlUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmEntradas.Designer.cs">
+      <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorDTD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorDTD.Designer.cs">
+      <DependentUpon>FrmMantenedorDTD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorLineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorLineas.Designer.cs">
+      <DependentUpon>FrmMantenedorLineas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorTiendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmMantenedorTiendas.Designer.cs">
+      <DependentUpon>FrmMantenedorTiendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmProbarCaidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmProbarCaidas.Designer.cs">
+      <DependentUpon>FrmProbarCaidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmRecuperarPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmRecuperarPass.Designer.cs">
+      <DependentUpon>FrmRecuperarPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmReporteScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmReporteScanner.Designer.cs">
+      <DependentUpon>FrmReporteScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cVistas\FrmSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cVistas\FrmSalidas.Designer.cs">
+      <DependentUpon>FrmSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoguin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoguin.Designer.cs">
+      <DependentUpon>FrmLoguin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIFramework.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIFramework.Designer.cs">
+      <DependentUpon>MDIFramework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\Boolean.cs" />
+    <Compile Include="Types\Byte.cs" />
+    <Compile Include="Types\ByteArray.cs" />
+    <Compile Include="Types\Counter.cs" />
+    <Compile Include="Types\ctestStruct.cs" />
+    <Compile Include="Types\DInt.cs" />
+    <Compile Include="Types\Double.cs" />
+    <Compile Include="Types\DWord.cs" />
+    <Compile Include="Types\Int.cs" />
+    <Compile Include="Types\String.cs" />
+    <Compile Include="Types\Struct.cs" />
+    <Compile Include="Types\Timer.cs" />
+    <Compile Include="Types\Word.cs" />
+    <EmbeddedResource Include="cVistas\FrmConfOlasTiendas.resx">
+      <DependentUpon>FrmConfOlasTiendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmConfSalTiendas.resx">
+      <DependentUpon>FrmConfSalTiendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmControlUsuarios.resx">
+      <DependentUpon>FrmControlUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmMantenedorDTD.resx">
+      <DependentUpon>FrmMantenedorDTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmMantenedorLineas.resx">
+      <DependentUpon>FrmMantenedorLineas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmMantenedorTiendas.resx">
+      <DependentUpon>FrmMantenedorTiendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmProbarCaidas.resx">
+      <DependentUpon>FrmProbarCaidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmRecuperarPass.resx">
+      <DependentUpon>FrmRecuperarPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmReporteScanner.resx">
+      <DependentUpon>FrmReporteScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cVistas\FrmSalidas.resx">
+      <DependentUpon>FrmSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoguin.resx">
+      <DependentUpon>FrmLoguin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIFramework.resx">
+      <DependentUpon>MDIFramework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Img\6.gif" />
+    <Content Include="Img\aceptar.png" />
+    <None Include="Img\ajax-loader %281%29.gif" />
+    <None Include="Img\ajax-loader.gif" />
+    <Content Include="Img\buscar.png" />
+    <Content Include="Img\calendario.png" />
+    <Content Include="Img\config.png" />
+    <Content Include="Img\copiar.png" />
+    <Content Include="Img\diagrama.png" />
+    <Content Include="Img\eliminar.png" />
+    <Content Include="Img\eliminar2.png" />
+    <Content Include="Img\email.png" />
+    <Content Include="Img\estimar.png" />
+    <Content Include="Img\excel.png" />
+    <Content Include="Img\favicon.ico" />
+    <Content Include="Img\grabar.png" />
+    <None Include="Img\icons8-actualizar-50.png" />
+    <None Include="Img\icons8-ajustes-50.png" />
+    <None Include="Img\icons8-apoyo-50.png" />
+    <None Include="Img\icons8-búsqueda-50.png" />
+    <None Include="Img\icons8-compartir-50.png" />
+    <None Include="Img\icons8-descargar-desde-la-nube-50.png" />
+    <None Include="Img\icons8-editar-50.png" />
+    <None Include="Img\icons8-eliminar-50.png" />
+    <None Include="Img\icons8-eliminar-50-2.png" />
+    <None Include="Img\icons8-servicios-50.png" />
+    <None Include="Img\icons8-subir-a-la-nube-50.png" />
+    <Content Include="Img\imprimir.png" />
+    <Content Include="Img\limpiar.png" />
+    <Content Include="Img\lista_1.png" />
+    <Content Include="Img\lista_2.png" />
+    <Content Include="Img\lista_3.png" />
+    <Content Include="Img\lista_4.png" />
+    <None Include="Img\Llave.png" />
+    <Content Include="Img\loader.gif" />
+    <Content Include="Img\logo.png" />
+    <Content Include="Img\manual.png" />
+    <Content Include="Img\mas.png" />
+    <Content Include="Img\minus6.png" />
+    <Content Include="Img\modificar.png" />
+    <Content Include="Img\modificar2.png" />
+    <Content Include="Img\ordernar.png" />
+    <Content Include="Img\pdf.png" />
+    <Content Include="Img\reporte.png" />
+    <Content Include="Img\salir.png" />
+    <Content Include="Img\Start.png" />
+    <None Include="Img\StartN.png" />
+    <Content Include="Img\Stop.png" />
+    <None Include="Img\StopN.png" />
+    <Content Include="Img\word.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
